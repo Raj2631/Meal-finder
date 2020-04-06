@@ -26,7 +26,6 @@ function searchMeal(e) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         resultHeading.innerHTML = `<h2>Search results for '${term}'</h2>`;
 
         if (data.meals === null) {
@@ -67,7 +66,7 @@ function getMealById(mealID) {
 // Fetch random meal from API.
 function getRandomMeal() {
   //Clear meals and heading.
-  meals.El.innerHTML = '';
+  mealsEl.innerHTML = '';
   resultHeading.innerHTML = '';
 
   fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
